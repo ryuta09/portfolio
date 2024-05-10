@@ -14,7 +14,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { useMailForm } from "@/hook/useMailForm";
-
+import ClipLoader from "react-spinners/ClipLoader";
 export default function MailForm() {
   const { form, onSubmit } = useMailForm();
   return (
@@ -83,8 +83,8 @@ export default function MailForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="max-w-[100px] w-full">
-              送信
+            <Button type="submit" className="max-w-[100px] w-full" disabled={form.formState.isSubmitting}>
+              {form.formState.isSubmitting ? <ClipLoader /> : "送信" }
             </Button>
           </form>
         </Form>
