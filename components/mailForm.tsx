@@ -27,7 +27,7 @@ export default function MailForm() {
   }, [form.formState.isSubmitSuccessful])  
   return (
     <>
-      <section className="w-[800px] flex flex-col gap-2">
+      <section className="max-w-[800px] w-full flex flex-col gap-2">
         <SectionHeading title="Contact" />
         <Form {...form}>
           <ToastContainer />
