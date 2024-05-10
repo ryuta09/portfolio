@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import SectionHeading from "./sectionHeading";
 import {
   Form,
@@ -15,13 +15,22 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { useMailForm } from "@/hook/useMailForm";
 import ClipLoader from "react-spinners/ClipLoader";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function MailForm() {
   const { form, onSubmit } = useMailForm();
+  useEffect(() => {
+    if(form.formState.isSubmitSuccessful) {
+      toast.success("メール送信に成功しました。");
+    }
+  }, [form.formState.isSubmitSuccessful])  
   return (
     <>
       <section className="w-[800px] flex flex-col gap-2">
         <SectionHeading title="Contact" />
         <Form {...form}>
+          <ToastContainer />
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <FormField
               control={form.control}
