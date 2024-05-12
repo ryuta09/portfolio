@@ -24,62 +24,32 @@ export const links = [
     hash: "#skills",
   },
   {
-    name: "Experience",
-    hash: "#experience",
-  },
-  {
     name: "Contact",
     hash: "#contact",
   },
 ] as const;
 
-export const experiencesData = [
-  {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
-    description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
-  },
-  {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
-  },
-] as const;
 
 export const projectsData = [
   {
-    title: "デモ1",
+    title: "介護施設サイトLP",
     description:
-      "ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキス",
+    "介護施設を想定したLPサイト。Astroを使用して構築。SEO対策を意識し、高速化を実現。対応業務はコーディングのみ",
     tags: ["HTML", "JavaScript", "CSS", "Scss", "Astro"],
     imageUrl: sunny,
   },
   {
-    title: "デモ2",
+    title: "パーソナルジムサイト",
     description:
-      "ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキス",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "パーソナルジムを想定したコーポレートサイト。Astroを使用して構築。SEO対策を意識し、高速化を実現。対応業務はコーディングのみ",
+      tags: ["HTML", "JavaScript", "CSS", "Scss", "Astro"],
     imageUrl: ufit,
   },
   {
-    title: "デモ3",
+    title: "パン屋LP",
     description:
-      "ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキス",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      "パン屋を想定したLPサイト。Astroを使用して構築。SEO対策を意識し、高速化を実現。対応業務はコーディングのみ",
+      tags: ["HTML", "JavaScript", "CSS", "Scss", "Astro"],
     imageUrl: pommy,
   },
 ] as const;
@@ -95,13 +65,10 @@ export const skillsData = [
   "Git",
   "Tailwind",
   "Prisma",
-  "MongoDB",
   "Redux",
   "GraphQL",
   "Apollo",
   "Express",
   "PostgreSQL",
-  "Python",
-  "Django",
   "Framer Motion",
 ] as const;
