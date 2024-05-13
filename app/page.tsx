@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Blog from "@/components/Blog/Blog";
 import Footer from "@/components/Footer";
 import MailForm from "@/components/mailForm";
 import Projects from "@/components/projects";
@@ -9,6 +10,7 @@ export default function Home() {
     <About />
     <Projects />
     <Skils />
+    <Blog />
     <MailForm />
     <Footer />
   </main>;
