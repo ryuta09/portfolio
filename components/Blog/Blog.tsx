@@ -12,7 +12,6 @@ import Link from "next/link";
 import Image from "next/image";
 const Blog = async () => {
   const { contents } = await getList();
-  console.log(contents);
   return (
     <>
       <div className="max-w-[800px] w-full mx-auto">
