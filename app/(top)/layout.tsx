@@ -4,11 +4,43 @@ import "../globals.css";
 import Header from "@/components/header";
 import ActiveSectionContext from "@/context/activeSectionContext";
 import ActiveSectionContextProvider from "@/context/activeSectionContext";
+import { siteConfig } from "@/config/site";
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "古賀龍太のポートフォリオサイトです。",
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.title}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    "Next.js",
+    "ポートフォリオ",
+    "TailwindCSs",
+    "shadcn/ui",
+    "react-hook-form",
+  ],
+  authors: [
+    {
+      name: "Ryuta Koga",
+      url: siteConfig.url,
+    },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.title,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images:[`${siteConfig.url}/og-iamge.png`],
+    creator: 'RyutaKoga',
+  }
 };
 
 export default function RootLayout({
