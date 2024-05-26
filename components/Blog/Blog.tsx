@@ -14,7 +14,7 @@ const Blog = async () => {
   const { contents } = await getList();
   return (
     <>
-      <div className="max-w-[800px] w-full mx-auto">
+      <section id="blog" className="max-w-[800px] w-full mx-auto">
         <SectionHeading title="Blog" />
         <div className="grid grid-cols-3 gap-3">
           {contents.map((content, index) => (
@@ -22,7 +22,7 @@ const Blog = async () => {
               <Card className="">
                 <CardHeader className="p-4">
                   <div>
-                    <Image 
+                    <Image
                       src={content.eyecatch.url}
                       width={130}
                       height={130}
@@ -36,7 +36,12 @@ const Blog = async () => {
             </Link>
           ))}
         </div>
-      </div>
+        <div className="text-center">
+          <p className="inline-block mt-4 px-4 py-2 bg-slate-300 text-center font-bold rounded-md tracking-tight">
+            <Link href="/blog">more</Link>
+          </p>
+        </div>
+      </section>
     </>
   );
 };
