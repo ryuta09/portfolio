@@ -7,7 +7,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   const post = await getDetail(postId);
   return (
     <>
-      <article className="prose max-w-[1200px] w-full mx-auto px-3 md:px-5">
+      <article className="prose lg:prose-lg max-w-[1000px] w-full mx-auto px-3 md:px-5 prose-h2:text-[18px] md:prose-h2:text-[24px]">
         <h2 className="sm:text-xl md:text-2xl lg:text-3xl text-center">
           {post.title}
         </h2>
