@@ -85,7 +85,7 @@ export default function MailForm() {
                 <FormItem>
                   <FormLabel />
                   <FormControl>
-                    <Textarea placeholder="本文" {...field} />
+                    <Textarea placeholder="本文" {...field} className="min-h-[250px]"/>
                   </FormControl>
                   <FormDescription />
                   <FormMessage />
