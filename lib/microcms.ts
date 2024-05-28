@@ -14,6 +14,7 @@ export type Blog = {
     id: string;
     name: string;
   };
+  tag: string[];
 };
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {

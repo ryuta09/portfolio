@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
+import { useSectionInView } from "@/lib/hook";
 const Blog = async () => {
   const { contents } = await getList();
   return (
@@ -19,18 +20,18 @@ const Blog = async () => {
         <div className="grid grid-cols-3 gap-3">
           {contents.map((content, index) => (
             <Link href={`/blog/${content.id}`} key={content.id}>
-              <Card className="">
-                <CardHeader className="p-4">
+              <Card>
+                <CardHeader className="p-0">
                   <div>
                     <Image
                       src={content.eyecatch.url}
                       width={130}
                       height={130}
                       alt={content.title}
-                      className="mx-auto"
+                      className="w-full rounded-t-lg"
                     />
                   </div>
-                  <CardTitle className="text-sm">{content.title}</CardTitle>
+                  <CardTitle className="text-sm p-2">{content.title}</CardTitle>
                 </CardHeader>
               </Card>
             </Link>
