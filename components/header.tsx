@@ -1,15 +1,11 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
-import clsx from "clsx";
-import { useActiveSectionContext } from "@/context/activeSectionContext";
 export default function Header() {
-  const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionContext()
   return (
     <>
-      <header className="z-[999] relative">
+      {/* <header className="z-[999] relative">
         <motion.div
           className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[55px] rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
           initial={{ y: -100, x: "-50%", opacity: 0 }}
@@ -55,6 +51,20 @@ export default function Header() {
             </ul>
           </nav>
         </motion.div>
+      </header> */}
+      <header className="w-full fixed top-0 left-0 z-10 h-[80px] flex items-center justify-between px-4 bg-white">
+        <div>
+          <a href="/" className="text-3xl">Portfolio</a>
+        </div>
+        <nav className="">
+          <ul className="flex items-center gap-8">
+            {links.map((link, index) => (
+              <li key={index} className="h-full relative">
+                <Link href={link.hash} className="flex items-center h-[80px] tracking-tight before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[3px] before:bg-red-300 before:transition-all before:duration-200  before:bg-left hover:before:w-full ">{link.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </header>
     </>
   );
