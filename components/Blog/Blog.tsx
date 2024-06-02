@@ -10,12 +10,11 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-import { useSectionInView } from "@/lib/hook";
 const Blog = async () => {
   const { contents } = await getList();
   return (
     <>
-      <section id="blog" className="max-w-[800px] w-full mx-auto">
+      <section id="blog" className="max-w-[800px] w-full scroll-mt-28 mx-auto">
         <SectionHeading title="Blog" />
         <div className="grid grid-cols-3 gap-3">
           {contents.map((content, index) => (
