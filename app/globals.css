@@ -74,3 +74,7 @@
       @apply bg-background text-foreground;
     }
   }
+
+  body {
+    font-family: var(--font-montserrat), var(--font-noto), sans-serif;
+  }
