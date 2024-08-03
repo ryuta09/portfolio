@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat, Noto_Sans_JP } from "next/font/google";
 
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: '--font-noto' });
-const mont = Montserrat({subsets: ["latin"], variable: "--font-montserrat", display: "swap"})
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${mont.variable} ${notoSansJP.variable} !scroll-smooth`}>
+    <html lang="ja" className={`${notoSansJP.className} !scroll-smooth`}>
       <body
         className={` bg-gray-50 text-gray-950`}
       >
