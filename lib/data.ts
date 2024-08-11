@@ -37,6 +37,7 @@ export const links = [
 
 export const projectsData = [
   {
+    id: 1,
     title: "介護施設サイトLP",
     description:
       "介護施設を想定したLPサイト。Astroを使用して構築。SEO対策を意識し、高速化を実現。対応業務はコーディングのみ",
@@ -44,6 +45,7 @@ export const projectsData = [
     imageUrl: sunny,
   },
   {
+    id: 2,
     title: "パーソナルジムサイト",
     description:
       "パーソナルジムを想定したコーポレートサイト。Astroを使用して構築。SEO対策を意識し、高速化を実現。対応業務はコーディングのみ",
@@ -51,6 +53,7 @@ export const projectsData = [
     imageUrl: ufit,
   },
   {
+    id: 3,
     title: "パン屋LP",
     description:
       "パン屋を想定したLPサイト。Astroを使用して構築。SEO対策を意識し、高速化を実現。対応業務はコーディングのみ",

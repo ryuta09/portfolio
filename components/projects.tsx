@@ -12,7 +12,7 @@ export default function Projects() {
       <SectionHeading title="Projects" />
       <div className="flex flex-col gap-4 sm:gap-6 mt-[3rem]">
         {projectsData.map((project, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={project.id}>
             <Project {...project}/>
           </React.Fragment>
         ))}
