@@ -30,9 +30,9 @@ export default function Skils() {
       >
         <SectionHeading title="My Skils" />
         <ul className="flex flex-wrap justify-center gap-2 text-medium md:text-lg text-gray-800">
-          {skillsData.map((skils, index) => (
+          {skillsData.map((skill) => (
             <motion.li
-              key={index}
+              key={skill.id}
               className="border bg-white border-black/[0.1] rounded-xl px-3 md:px-5 py-3"
               variants={fadeInAnimationsVariants}
               initial="initial"
@@ -40,9 +40,9 @@ export default function Skils() {
               viewport={{
                 once: true
               }}
-              custom={index}
+              custom={skill.id}
             >
-              {skils}
+              {skill.name}
             </motion.li>
           ))}
         </ul>
