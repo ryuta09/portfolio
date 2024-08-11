@@ -18,7 +18,7 @@ export default function Header() {
         <nav className="">
           <ul className="flex items-center gap-8">
             {links.map((link, index) => (
-              <li key={index} className="h-full relative">
+              <li key={link.id} className="h-full relative">
                 <Link href={link.hash} className="flex items-center h-[80px] tracking-tight before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[3px] before:bg-red-300 before:transition-all before:duration-200  before:bg-left hover:before:w-full ">{link.name}</Link>
               </li>
             ))}
