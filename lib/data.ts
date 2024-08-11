@@ -4,26 +4,32 @@ import pommy from "@/public/pommy-bakery.png";
 
 export const links = [
   {
+    id: 1,
     name: "Home",
     hash: "#home",
   },
   {
+    id: 2,
     name: "About",
     hash: "#about",
   },
   {
+    id: 3,
     name: "Projects",
     hash: "#projects",
   },
   {
+    id: 3,
     name: "Skills",
     hash: "#skills",
   },
   {
+    id: 4,
     name: "Blog",
     hash: "#blog",
   },
   {
+    id: 5,
     name: "Contact",
     hash: "#contact",
   },
