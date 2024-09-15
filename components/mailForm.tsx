@@ -1,6 +1,6 @@
-"use client";
-import React, { useEffect } from "react";
-import SectionHeading from "./sectionHeading";
+'use client'
+import React, { useEffect } from 'react'
+import SectionHeading from './sectionHeading'
 import {
   Form,
   FormControl,
@@ -9,25 +9,45 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../components/ui/form";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
-import { useMailForm } from "@/hook/useMailForm";
-import ClipLoader from "react-spinners/ClipLoader";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+} from '../components/ui/form'
+import { Input } from './ui/input'
+import { Textarea } from './ui/textarea'
+import { Button } from './ui/button'
+import { useMailForm } from '@/hook/useMailForm'
+import ClipLoader from 'react-spinners/ClipLoader'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { motion } from 'framer-motion'
 
 export default function MailForm() {
-  const { form, onSubmit } = useMailForm();
+  const { form, onSubmit } = useMailForm()
   useEffect(() => {
-    if(form.formState.isSubmitSuccessful) {
-      toast.success("メール送信に成功しました。");
+    if (form.formState.isSubmitSuccessful) {
+      toast.success('メール送信に成功しました。')
     }
-  }, [form.formState.isSubmitSuccessful])  
+  }, [form.formState.isSubmitSuccessful])
   return (
     <>
-      <section id="contact" className="max-w-[800px] w-full flex flex-col gap-2 mt-20">
+      <motion.section
+        id="contact"
+        className="max-w-[800px] w-full flex flex-col gap-2 mt-20"
+        variants={{
+          offscreen: {
+            y: 100,
+            opacity: 0,
+          },
+          onscreen: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 0.5,
+            },
+          },
+        }}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <SectionHeading title="Contact" />
         <Form {...form}>
           <ToastContainer />
@@ -85,19 +105,27 @@ export default function MailForm() {
                 <FormItem>
                   <FormLabel />
                   <FormControl>
-                    <Textarea placeholder="本文" {...field} className="min-h-[250px]"/>
+                    <Textarea
+                      placeholder="本文"
+                      {...field}
+                      className="min-h-[250px]"
+                    />
                   </FormControl>
                   <FormDescription />
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="max-w-[100px] w-full" disabled={form.formState.isSubmitting}>
-              {form.formState.isSubmitting ? <ClipLoader /> : "送信" }
+            <Button
+              type="submit"
+              className="max-w-[100px] w-full"
+              disabled={form.formState.isSubmitting}
+            >
+              {form.formState.isSubmitting ? <ClipLoader /> : '送信'}
             </Button>
           </form>
         </Form>
-      </section>
+      </motion.section>
     </>
-  );
+  )
 }

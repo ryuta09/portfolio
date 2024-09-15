@@ -1,5 +1,6 @@
-import { getList } from "@/lib/microcms";
-import SectionHeading from "../sectionHeading";
+'use client'
+import { getList } from '@/lib/microcms'
+import SectionHeading from '../sectionHeading'
 import {
   Card,
   CardContent,
@@ -7,17 +8,38 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import Link from "next/link";
-import Image from "next/image";
+} from '@/components/ui/card'
+import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+
 const Blog = async () => {
-  const { contents } = await getList();
+  const { contents } = await getList()
   return (
     <>
-      <section id="blog" className="max-w-[800px] w-full scroll-mt-28 mx-auto">
+      <motion.section
+        id="blog"
+        className="max-w-[800px] w-full scroll-mt-28 mx-auto"
+        variants={{
+          offscreen: {
+            y: 100,
+            opacity: 0,
+          },
+          onscreen: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 0.5,
+            },
+          },
+        }}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <SectionHeading title="Blog" />
         <div className="grid grid-cols-3 gap-3">
-          {contents.map((content, index) => (
+          {contents.map((content) => (
             <Link href={`/blog/${content.id}`} key={content.id}>
               <Card>
                 <CardHeader className="p-0">
@@ -41,9 +63,9 @@ const Blog = async () => {
             <Link href="/blog">more</Link>
           </p>
         </div>
-      </section>
+      </motion.section>
     </>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog
