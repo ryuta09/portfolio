@@ -12,6 +12,7 @@ import {
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Button from '../Button/Button'
 
 const Blog = async () => {
   const { contents } = await getList()
@@ -58,10 +59,10 @@ const Blog = async () => {
             </Link>
           ))}
         </div>
-        <div className="text-center">
-          <p className="inline-block mt-4 px-4 py-2 bg-slate-300 text-center font-bold rounded-md tracking-tight">
-            <Link href="/blog">more</Link>
-          </p>
+        <div className="text-center mt-6">
+          <Button color={'slate'} size={'md'}>
+            <Link href="/blog">もっと見る</Link>
+          </Button>
         </div>
       </motion.section>
     </>
